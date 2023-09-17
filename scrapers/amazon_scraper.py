@@ -29,7 +29,7 @@ class AmazonScraper:
             current_price = int(price.text.replace(",", "").replace(".", ""))
             ConsoleLogger.info(f"Current price  : ₹{current_price}")
             ConsoleLogger.info(f"Required price : ₹{product.price_required}")
-            if current_price >= product.price_required:
+            if current_price <= product.price_required:
                 ConsoleLogger.info("Sending Email...")
                 send_email(product, current_price)
         except HTTPError as http_error:
