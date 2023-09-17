@@ -17,7 +17,7 @@ def get_amazon_list() -> list[Product]:
     return product_list
 
 
-def get_flipkar_list() -> list[Product]:
+def get_flipkart_list() -> list[Product]:
     file_path = Environment.JSON_FILE_PATH
     with open(file_path) as f:
         json_data = json.load(f)
